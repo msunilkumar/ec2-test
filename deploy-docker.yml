@@ -1,5 +1,5 @@
 ---
-- hosts: neo
+- hosts: ec2app
   become: True
   tasks:
     - name: Install python pip
