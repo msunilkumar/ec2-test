@@ -1,0 +1,28 @@
+---
+- hosts: neo
+  become: True
+  tasks:
+    - name: Install python pip
+      yum:
+        name: python-pip
+        state: present
+    - name: Install docker
+      yum:
+        name: docker
+        state: present
+    - name: start docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+    - name: Install docker-py python module
+      pip:
+        name: docker-py
+        state: present
+    - name: Start the container
+      docker_container:
+        name: ec2-test-app
+        image: "sunil4356/ec2-test:1.0"
+        state: started
+        published_ports:
+          - 0.0.0.0:80:8080
