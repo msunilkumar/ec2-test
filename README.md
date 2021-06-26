@@ -10,6 +10,6 @@
 # sudo systemctl start jenkins
 # sudo systemctl status jenkins
 # Access jenkins Web UI
-# http://<ec2-ip-address>:8080/
+# http://ec2-ip-address:8080/
 # Access the initial admin password
 # sudo cat /var/lib/jenkins/secrets/initialAdminPassword
